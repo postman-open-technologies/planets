@@ -48,7 +48,7 @@ jobs:
       - name: /planets/{planet} get lambda deploy zip
         uses: postman-open-technologies/planets@main
         with:
-            args: zip -qq -r m-s-planets-planet-g.zip planets/planet/get/index.js node_modules
+            args: zip -qq -r m-s-planets-planet-g.zip planets/planet_id/get/index.js node_modules
       - name: planets get lambda deploy
         uses: appleboy/lambda-action@master
         with:
@@ -60,7 +60,7 @@ jobs:
       - name: /planets/{planet} put lambda deploy zip
         uses: postman-open-technologies/planets@main
         with:
-            args: zip -qq -r m-s-planets-planet-pu.zip planets/planet/put/index.js node_modules
+            args: zip -qq -r m-s-planets-planet-pu.zip planets/planet_id/put/index.js node_modules
       - name: planets get lambda deploy
         uses: appleboy/lambda-action@master
         with:
@@ -72,7 +72,7 @@ jobs:
       - name: /planets/{planet} delete lambda deploy zip
         uses: postman-open-technologies/planets@main
         with:
-            args: zip -qq -r m-s-planets-planet-d.zip planets/planet/delete/index.js node_modules
+            args: zip -qq -r m-s-planets-planet-d.zip planets/planet_id/delete/index.js node_modules
       - name: planets get lambda deploy
         uses: appleboy/lambda-action@master
         with:
