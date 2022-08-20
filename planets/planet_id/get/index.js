@@ -11,7 +11,7 @@ exports.handler = vandium.generic()
     database : process.env.database
     });
 
-    var sql = 'SELECT * FROM planets WHERE id = ' + connection.escape(event.planet_id);
+    var sql = 'SELECT * FROM planets WHERE identifier = ' + connection.escape(event.planet_id);
     connection.query(sql, function (error, results, fields) {
 
     callback( null, results[0] );

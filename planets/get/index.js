@@ -39,16 +39,10 @@ exports.handler = vandium.generic()
       limit = 25;
     }
 
-    var sql = "SELECT * FROM planets b WHERE id IS NOT NULL";
+    var sql = "SELECT * FROM planets p WHERE identifier IS NOT NULL";
     if(search != ''){
        sql += " AND b.name LIKE '%" + search + "%'";
     }
-    if(role != ''){
-       sql += " AND id IN(SELECT planet_id FROM planets_roles WHERE role_id IN(SELECT id FROM roles WHERE name = '" + role + "'))";
-    }   
-    if(tags != ''){
-       sql += " AND id IN(SELECT planet_id FROM planets_tags WHERE tag_id IN(SELECT id FROM tags WHERE name IN ('" + tags.replace(",","','") + "')))";
-    }     
     sql += " ORDER BY name";
     sql += " LIMIT " + event.page + "," + event.limit;
     connection.query(sql, function (error, results, fields) {

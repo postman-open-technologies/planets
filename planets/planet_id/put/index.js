@@ -24,7 +24,7 @@ exports.handler = vandium.generic()
       property_count++;
     }
 
-    sql += " WHERE id = " + connection.escape(event.planet_id);
+    sql += " WHERE identifier = " + connection.escape(event.planet_id);
   
     connection.query(sql, function (error, results, fields) {
 
