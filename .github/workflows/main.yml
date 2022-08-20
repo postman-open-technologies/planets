@@ -45,39 +45,39 @@ jobs:
             aws_region: us-west-1
             function_name: m-s-planets-g
             zip_file: m-s-planets-g.zip
-      - name: /planets/{planetId} get lambda deploy zip
+      - name: /planets/{planetid} get lambda deploy zip
         uses: postman-open-technologies/planets@main
         with:
-            args: zip -qq -r m-s-planets-planetId-g.zip planets/planetId/get/index.js node_modules
+            args: zip -qq -r m-s-planets-planetid-g.zip planets/planetid/get/index.js node_modules
       - name: planets get lambda deploy
         uses: appleboy/lambda-action@master
         with:
             aws_access_key_id: ${{secrets.AWS_ACCESS_KEY_ID}}
             aws_secret_access_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
             aws_region: us-west-1
-            function_name: m-s-planets-planetId-g
-            zip_file: m-s-planets-planetId-g.zip
-      - name: /planets/{planetId} put lambda deploy zip
+            function_name: m-s-planets-planetid-g
+            zip_file: m-s-planets-planetid-g.zip
+      - name: /planets/{planetid} put lambda deploy zip
         uses: postman-open-technologies/planets@main
         with:
-            args: zip -qq -r m-s-planets-planetId-pu.zip planets/planetId/put/index.js node_modules
+            args: zip -qq -r m-s-planets-planetid-pu.zip planets/planetid/put/index.js node_modules
       - name: planets get lambda deploy
         uses: appleboy/lambda-action@master
         with:
             aws_access_key_id: ${{secrets.AWS_ACCESS_KEY_ID}}
             aws_secret_access_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
             aws_region: us-west-1
-            function_name: m-s-planets-planetId-pu
-            zip_file: m-s-planets-planetId-pu.zip
-      - name: /planets/{planetId} delete lambda deploy zip
+            function_name: m-s-planets-planetid-pu
+            zip_file: m-s-planets-planetid-pu.zip
+      - name: /planets/{planetid} delete lambda deploy zip
         uses: postman-open-technologies/planets@main
         with:
-            args: zip -qq -r m-s-planets-planetId-d.zip planets/planetId/delete/index.js node_modules
+            args: zip -qq -r m-s-planets-planetid-d.zip planets/planetid/delete/index.js node_modules
       - name: planets get lambda deploy
         uses: appleboy/lambda-action@master
         with:
             aws_access_key_id: ${{secrets.AWS_ACCESS_KEY_ID}}
             aws_secret_access_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
             aws_region: us-west-1
-            function_name: m-s-planets-planetId-d
-            zip_file: m-s-planets-planetId-d.zip          
+            function_name: m-s-planets-planetid-d
+            zip_file: m-s-planets-planetid-d.zip          
